@@ -1,7 +1,7 @@
 <ol class="steps">
   {{#each node in nodes}}
   <li>
-    {{#link-to 'nodes.node' node.parent.id}}<span class="m">{{node.marker}}</span> {{node.name}}{{/link-to}}
+    {{#link-to 'nodes.node' node.id}}<span class="m">{{node.marker}}</span> {{node.name}}{{/link-to}}
     <ol>
       {{#each child in node.children}}
         <li>{{#link-to 'nodes.node' child.id}}<span class="m">{{child.marker}}</span> {{child.name}}{{/link-to}}</li>

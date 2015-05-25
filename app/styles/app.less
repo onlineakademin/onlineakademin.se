@@ -247,13 +247,15 @@ ol.steps {
       margin-left: 0;
       padding: 0 0 @line-height-computed 0;
 
-      &:first-child {
-        padding-top: @line-height-computed;
-      }
-
       &:last-child {
         border-left-color: white;
         padding-bottom: 0;
+      }
+
+      &:first-child {
+        // if only child, reset `:last-child`
+        border-color: @brand-primary;
+        padding-top: @line-height-computed;
       }
     }
 
