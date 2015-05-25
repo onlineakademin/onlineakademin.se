@@ -1,11 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.View.extend({
-  menuVisible: true,
+  menuVisible: false,
 
   actions: {
     toggleMenu: function() {
       this.toggleProperty('menuVisible');
+    },
+
+    closeMenu: function() {
+      this.set('menuVisible', false);
     }
   },
 

@@ -1,13 +1,12 @@
-<ol class="boxed">
-  <li class="expanded">
-    <!-- fix this -->
-    {{#link-to 'nodes.node' node.parent.id class="heading"}}<span class="marker">{{node.marker}}</span> {{node.name}}{{/link-to}}
+<ol class="steps">
+  {{#each node in nodes}}
+  <li>
+    {{#link-to 'nodes.node' node.parent.id}}<span class="m">{{node.marker}}</span> {{node.name}}{{/link-to}}
     <ol>
       {{#each child in node.children}}
-        <li>
-          {{#link-to 'nodes.node' child.id}}<span class="marker">{{child.marker}}</span> {{child.name}}{{/link-to}}
-        </li>
+        <li>{{#link-to 'nodes.node' child.id}}<span class="m">{{child.marker}}</span> {{child.name}}{{/link-to}}</li>
       {{/each}}
     </ol>
   </li>
+  {{/each}}
 </ol>

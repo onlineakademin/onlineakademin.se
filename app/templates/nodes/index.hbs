@@ -1,15 +1,11 @@
-<div class="row page-header">
-  <div class="col-xs-12">
-    <h1>Videos</h1>
-  </div>
-</div>
+<header class="page">
+  <h1>Videor</h1>
+</header>
 
-<div class="row">
-  <div class="wrapper-content">
-    <div class="box-btns">
-    {{#each node in model}}
-      {{#link-to 'nodes.node' node.id class="btn btn-lg btn-primary btn-block"}}{{node.name}}{{/link-to}}
-    {{/each}}
+<div class="wrapper-steps">
+  {{#each node in model}}
+    <div class="step-wrapper">
+      {{#link-to 'nodes.node' node.id class="step-node"}}{{node.name}}{{/link-to}}
     </div>
-  </div>
+  {{/each}}
 </div>

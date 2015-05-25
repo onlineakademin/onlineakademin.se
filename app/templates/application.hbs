@@ -19,7 +19,12 @@
           <li><a href="#">Om grundarna</a></li>
         </ul>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 col-social">
+        <div class="social">
+          <img src="images/social-youtube.svg" alt="YouTube">
+          <img src="images/social-facebook.svg" alt="Facebook">
+          <img src="images/social-twitter.svg" alt="Twitter">
+        </div>
       </div>
     </div>
   </div>
@@ -28,18 +33,24 @@
 <nav class="navbar">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-        {{#link-to 'index'}}<img src="/images/menu-home.svg" height="30">{{/link-to}}
-        {{#link-to 'nodes'}}<img src="/images/menu-videos.svg" height="30">{{/link-to}}
-        <a {{action 'toggleMenu' target=view}}>
-          <img src="/images/menu-info.svg" height="30">
-        </a>
+      <div class="col-xs-4 col-sm-3 col-md-2">
+        {{#link-to 'index'}}<img src="/images/menu-home.svg"> <span>Onlineakademin</span>{{/link-to}}
+      </div>
+
+      <div class="col-xs-4 col-sm-3 col-md-2">
+        {{#link-to 'nodes'}}<img src="/images/menu-videos.svg"> <span>Videor</span>{{/link-to}}
+      </div>
+
+      <div class="col-xs-4 col-sm-6 col-md-8">
+        <a {{action 'toggleMenu' target=view}}><span class="glyphicon glyphicon-menu-hamburger"></span></a>
       </div>
     </div>
   </div>
 </nav>
 
-<div class="container wrapper-main">
+<div class="overlay" {{action 'closeMenu' target=view}}></div>
+
+<div class="container wrapper-content">
   {{outlet}}
 </div>
 

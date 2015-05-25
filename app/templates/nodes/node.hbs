@@ -1,21 +1,23 @@
-<div class="row page-header">
-  <div class="col-xs-12">
-    <h1 class="node-level-{{model.level}}">
-      <span>{{model.parent.parent.name}}</span>
-    </h1>
-  </div>
-</div>
+<header class="page">
+  <h1>{{model.parent.parent.name}}</h1>
+</header>
 
-<div class="row">
-  <div class="wrapper-menu">
-    {{#each node in model.parent.parent.children}}
-      {{component "node-menu" node=node}}
-    {{/each}}
+<div class="wrapper-with-sidebar">
+  <div class="wrapper-sidebar">
+      {{component "node-menu" nodes=model.parent.parent.children}}
+
+      <div class="social">
+        <img src="images/social-youtube.svg" alt="YouTube">
+        <img src="images/social-facebook.svg" alt="Facebook">
+        <img src="images/social-twitter.svg" alt="Twitter">
+      </div>
   </div>
-  <div class="wrapper-content with-menu">
+
+  <div class="wrapper-main">
+    <h2><span>{{model.marker}}</span> {{model.name}}</h2>
+
     {{#each node in model.children}}
-      <div class="box node node-{{node.type}}">{{component node.componentName node=node}}</div>
+      {{component node.componentName node=node}}
     {{/each}}
   </div>
 </div>
-

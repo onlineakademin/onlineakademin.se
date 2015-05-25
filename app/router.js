@@ -11,4 +11,5 @@ export default Router.map(function() {
   });
 
   this.route('about');
+  this.route('test-video');
 });

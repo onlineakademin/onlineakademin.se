@@ -1,0 +1,2 @@
+ember build -prod
+rsync -avz dist/ root@beta.onlineakademin.se:/var/oase/oase-client/
