@@ -1,8 +1,67 @@
-<nav class="top-bar" data-topbar role="navigation">
-  <ul class="title-area">
-    <li class="name"><h1><a href="#">Onlineakademin.se</a></h1></li>
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
+<div class="menu-dropdown {{if view.menuVisible 'expanded' 'not-expanded'}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <ul>
+          <li><a href="#">Om Onlineakademin</a></li>
+          <li><a href="#">Videor</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul>
+          <li><a href="#">Bidra</a></li>
+          <li><a href="#">Våra sponsorer</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 last-ul">
+        <ul>
+          <li><a href="#">Kontakt</a></li>
+          <li><a href="#">Om grundarna</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        {{#link-to 'index'}}<img src="/images/menu-home.svg" height="30">{{/link-to}}
+        {{#link-to 'nodes'}}<img src="/images/menu-videos.svg" height="30">{{/link-to}}
+        <a {{action 'toggleMenu' target=view}}>
+          <img src="/images/menu-info.svg" height="30">
+        </a>
+      </div>
+    </div>
+  </div>
 </nav>
 
-{{outlet}}
+<div class="container wrapper-main">
+  {{outlet}}
+</div>
+
+<footer class="container wrapper-footer">
+  <div class="row">
+    <div class="col col-sm-4">
+      <ul>
+        <li><a href="#">Om Onlineakademin</a></li>
+        <li><a href="#">Videor</a></li>
+      </ul>
+    </div>
+    <div class="col col-sm-4">
+      <ul>
+        <li><a href="#">Bidra</a></li>
+        <li><a href="#">Våra sponsorer</a></li>
+      </ul>
+    </div>
+    <div class="col col-sm-4">
+      <ul>
+        <li><a href="#">Kontakta oss</a></li>
+        <li><a href="#">Om grundarna</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

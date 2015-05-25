@@ -1,0 +1,21 @@
+<div class="row page-header">
+  <div class="col-xs-12">
+    <h1 class="node-level-{{model.level}}">
+      <span>{{model.parent.parent.name}}</span>
+    </h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="wrapper-menu">
+    {{#each node in model.parent.parent.children}}
+      {{component "node-menu" node=node}}
+    {{/each}}
+  </div>
+  <div class="wrapper-content with-menu">
+    {{#each node in model.children}}
+      <div class="box node node-{{node.type}}">{{component node.componentName node=node}}</div>
+    {{/each}}
+  </div>
+</div>
+

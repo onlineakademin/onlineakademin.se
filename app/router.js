@@ -6,4 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
+  this.resource('nodes', function() {
+    this.route('node', { path: '/*wildcard' });
+  });
+
+  this.route('about');
 });

@@ -1,0 +1,15 @@
+<div class="row page-header">
+  <div class="col-xs-12">
+    <h1>Videos</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="wrapper-content">
+    <div class="box-btns">
+    {{#each node in model}}
+      {{#link-to 'nodes.node' node.id class="btn btn-lg btn-primary btn-block"}}{{node.name}}{{/link-to}}
+    {{/each}}
+    </div>
+  </div>
+</div>
