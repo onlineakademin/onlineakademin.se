@@ -104,20 +104,21 @@
 }
 
 .overlay {
-  background: transparent;
-  display: none;
+  background: rgba(0, 0, 0, 0.0);
+  visibility: hidden;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 10;
+  .transition(background 0.10s);
 }
 
 body.with-menu {
   .overlay {
     background: rgba(0, 0, 0, 0.5);
-    display: block;
+    visibility: visible;
   }
   .menu-dropdown {
     background: rgba(237, 237, 237, 0.95);

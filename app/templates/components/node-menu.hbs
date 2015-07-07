@@ -1,10 +1,10 @@
 <ol class="steps">
   {{#each node in nodes}}
-  <li>
-    {{#link-to 'nodes.node' node.id}}<span class="m">{{node.marker}}</span> {{node.name}}{{/link-to}}
+  <li data-node-id={{node.id}} class="not-expanded">
+    <span class="lvl0" {{action 'toggleExpand' node}}><span class="m">{{node.marker}}</span> {{node.name}}</span>
     <ol>
       {{#each child in node.children}}
-        <li>{{#link-to 'nodes.node' child.id}}<span class="m">{{child.marker}}</span> {{child.name}}{{/link-to}}</li>
+        <li>{{#link-to 'nodes.lvl0.lvl2' node.parent.ord child.lvl2Id}}<span class="m">{{child.marker}}</span> {{child.name}}{{/link-to}}</li>
       {{/each}}
     </ol>
   </li>

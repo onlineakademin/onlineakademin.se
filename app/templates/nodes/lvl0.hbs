@@ -1,10 +1,10 @@
 <header class="page">
-  <h1>{{model.parent.parent.name}}</h1>
+  <h1>{{model.name}}</h1>
 </header>
 
 <div class="wrapper-with-sidebar">
-  <div class="wrapper-sidebar">
-      {{component "node-menu" nodes=model.parent.parent.children}}
+  <div class="wrapper-sidebar {{if sidebarHiddenXS 'hidden-xs'}}">
+      {{component "node-menu" nodes=model.children}}
 
       <div class="social">
         <img src="images/social-youtube.svg" alt="YouTube">
@@ -14,10 +14,6 @@
   </div>
 
   <div class="wrapper-main">
-    <h2><span>{{model.marker}}</span> {{model.name}}</h2>
-
-    {{#each node in model.children}}
-      {{component node.componentName node=node}}
-    {{/each}}
+    {{outlet}}
   </div>
 </div>

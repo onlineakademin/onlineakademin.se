@@ -6,8 +6,11 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-  this.resource('nodes', function() {
-    this.route('node', { path: '/*wildcard' });
+  this.route('nodes', function() {
+    this.route('lvl0', { path: ':lvl0_ord' }, function() {
+      // lvl1 doesnt exist indepedently
+      this.route('lvl2', { path: '*path' });
+    });
   });
 
   this.route('about');

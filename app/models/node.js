@@ -17,6 +17,17 @@ let Node =  DS.Model.extend({
     return n;
   }.property('id'),
 
+  // ugly ugly hack; need to support hierarchical stuff properly
+  // for linking: drop the first id (lvl0 ord)
+  lvl2Id: function() {
+    var id = this.get('id');
+    
+    if (this.get('level') > 0) {
+      return id.split('/').slice(1).join('/');
+    }
+    return id;
+  }.property('id', 'level'),
+
   marker: function() {
     if (this.get('level') == 1) {
       return this.get('ord');

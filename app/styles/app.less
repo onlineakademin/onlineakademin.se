@@ -3,8 +3,17 @@
 
 @marker-ball-size: 40px;
 
+html, body {
+  height: 101%;
+}
+
+body > div.ember-view {
+  height: 100%;
+}
+
 .wrapper-content {
   background: white;
+  min-height: 100%;
 }
 
 /*
@@ -24,16 +33,25 @@
   
   .wrapper-main {
     .make-sm-column(8);
+    padding-top: @line-height-computed;
+    padding-bottom: 2 * @line-height-computed;
 
     h2 {
       border: 1px solid @body-bg-desktop;
       border-width: 1px 0;
-      margin: 0 (-@grid-gutter-width / 2) @line-height-computed;
+      margin: @line-height-computed (-@grid-gutter-width / 2);
       padding: @line-height-computed 0 (@line-height-computed - 1px);
       text-align: center;
 
+      &:first-child {
+        margin-top: 0;
+      }
+
       @media (min-width: @screen-sm-min) {
-        border-width: 0 0 1px;
+
+        &:first-child {
+          border-width: 0 0 1px;
+        }
       }
     }
   }
@@ -131,6 +149,14 @@
   }
 }
 
+#contact {
+  text-align: left;
+
+  .row {
+    margin-bottom: @line-height-computed;
+  }
+}
+
 .wrapper-footer {
   background: white;
   border-top: 1px solid @body-bg-desktop;
@@ -203,16 +229,18 @@ ol.steps {
   margin: 0;
   padding: 0;
 
-  a {
+  a, span.lvl0 {
     display: block;
     color: black;
+    font-weight: @headings-font-weight;
     min-height: @marker-ball-size;
     padding-top: (@marker-ball-size / 4);
     text-decoration: none;
     -webkit-transition: color linear 0.1s;
+    cursor: pointer;
 
-    &:hover, &:active, &.active {
-      color: black;
+    &.active {
+      color: @brand-primary;
       text-decoration: none;
 
       span.m {
@@ -246,6 +274,10 @@ ol.steps {
       min-height: 40px;
       margin-left: 0;
       padding: 0 0 @line-height-computed 0;
+
+      a {
+        font-weight: normal;
+      }
 
       &:last-child {
         border-left-color: white;
