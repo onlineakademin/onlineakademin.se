@@ -1,11 +1,11 @@
-<header class="page">
-  <h1>Videor</h1>
-</header>
+<div class="container wrapper-content">
+  <header class="page">
+    <h1>Videor</h1>
+  </header>
 
-<div class="wrapper-steps">
-  {{#each node in model}}
-    <div class="step-wrapper">
+  <div class="wrapper-steps">
+    {{#each node in model}}
       {{#link-to 'nodes.lvl0' node.id class="step-node"}}{{node.name}}{{/link-to}}
-    </div>
-  {{/each}}
+    {{/each}}
+  </div>
 </div>

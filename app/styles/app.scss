@@ -1,0 +1,375 @@
+$icon-font-path: "/fonts/";
+$brand-primary: #ff5151;
+$brand-secondary: #ffa9a9;
+$marker-ball-size: 40px;
+$navbar-height: 60px;
+
+// legacy
+$body-bg-desktop: #ededed;
+
+// bower:scss
+@import "_bootstrap.scss";
+@import "inc/_navbar.scss";
+@import "inc/_splash.scss";
+// endbower
+
+html {
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+}
+
+body, body > div.ember-view {
+  height: 100%;
+}
+
+.wrapper-content {
+  background: white;
+  // min-height: 100%;
+  padding-top: $navbar-height;
+}
+
+/*
+ * Layout with sidebar, divided by vertical border.
+ *
+ * This layout selectively uses `display: table` to achieve equal column height
+ * in order for the border to work. This means old mark-up still works, but
+ * it's a bit of a hack. Alternatives: Flexbox, "background image"...
+ */
+.wrapper-with-sidebar {
+  @include make-row();
+  padding-top: $line-height-computed;
+
+  .wrapper-sidebar {
+    @include make-sm-column(4);
+  }
+  
+  .wrapper-main {
+    @include make-sm-column(8);
+    padding-top: $line-height-computed;
+    padding-bottom: 2 * $line-height-computed;
+
+    h2 {
+      border: 1px solid $body-bg-desktop;
+      border-width: 1px 0;
+      margin: $line-height-computed (-$grid-gutter-width / 2);
+      padding: $line-height-computed 0 ($line-height-computed - 1px);
+      text-align: center;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      @media (min-width: $screen-sm-min) {
+        &:first-child {
+          border-width: 0 0 1px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    display: table;
+    height: 100%;
+
+    .wrapper-sidebar, .wrapper-main {
+      height: 100%;
+      display: table-cell;
+      float: none;
+      vertical-align: top;
+    }
+
+    .wrapper-sidebar {
+      border-right: 2px solid $body-bg-desktop;
+    }
+  }
+}
+
+/*
+ * A page that only displays a list of steps as boxes (buttons)
+ */
+.wrapper-steps {
+  $step-size: 120px;
+
+  padding-top: $line-height-computed; 
+  text-align: center;
+  
+  .step-wrapper {
+    text-align: center;
+  }
+
+  .step-node {
+    height: $step-size;
+    width: $step-size;
+    background: $brand-primary;
+    color: white;
+
+    border: 2px solid $brand-primary;
+    border-radius: $step-size / 2;
+    font-size: $font-size-base;
+    font-weight: $headings-font-weight;
+    display: inline-block;
+    margin: 0 (10px);
+    margin-bottom: $line-height-computed;
+    padding: ((($step-size - $line-height-computed) / 2) 0);
+    text-align: center;
+
+    &:hover {
+      border-color: $brand-primary;
+      color: $brand-primary;
+      background: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.wrapper-footer {
+  background: white;
+  border-top: 1px solid $body-bg-desktop;
+  padding-top: 2 * $line-height-computed;
+  padding-bottom: 2* $line-height-computed;
+  margin-top: 3 * $line-height-computed;
+  text-align: center;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+    li { padding: ($line-height-computed / 2) 0; }
+  }
+
+  a {
+    color: #aaa;
+  }
+
+  .col {    
+    &:last-child { border-right: none; }
+  }
+
+  img {
+    height: 3 * $line-height-computed;
+  }
+}
+
+/*
+ * The header for an entire page, displayed above any content in its own 
+ * row.
+ */
+header.page {
+  margin: 0 (-$grid-gutter-width / 2);
+  padding: 2 * $line-height-computed 0 $line-height-computed;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+/*
+ * Sidebar social media
+ */
+.social {
+  border: 1px solid $body-bg-desktop;
+  border-width: 1px 0 0;
+
+  margin: 0 (-$grid-gutter-width / 2) 0;
+  padding: (2 * $line-height-computed) 0;
+  text-align: center;
+
+  img {
+    height: 2 * $line-height-computed;
+    margin: 0 (1 * $padding-base-horizontal);
+  }
+}
+
+/*
+ * Steps list
+ *
+ * Supports displaying two levels of steps, where the upper level is displayed
+ * as boxes, and the second level as sub-steps of the topmost level.
+ *
+ * Hide sub-steps by setting `.not-expanded` on the step `li` element.
+ */
+ol.steps {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  a, span.lvl0 {
+    display: block;
+    color: black;
+    font-weight: $headings-font-weight;
+    min-height: $marker-ball-size;
+    padding-top: ($marker-ball-size / 4);
+    text-decoration: none;
+    -webkit-transition: color linear 0.1s;
+    cursor: pointer;
+
+    &.active {
+      color: $brand-primary;
+      text-decoration: none;
+
+      span.m {
+        background: $brand-primary;
+        color: #fff;
+      }
+    }
+
+    span.m {
+      margin-top: -($marker-ball-size / 4);
+    }
+  }
+
+  // boxed steps
+  > li {
+    margin-bottom: $line-height-computed;
+    padding: $line-height-computed $padding-base-horizontal;
+
+    &.not-expanded ol { display: none; }
+  }
+
+  // sub-steps
+  ol {
+    list-style-type: none;
+    margin: 0 0 0 ($marker-ball-size / 2);
+    padding: 0;
+
+    li {
+      border-left: 1px solid $brand-primary;
+      min-height: 40px;
+      margin-left: 0;
+      padding: 0 0 $line-height-computed 0;
+
+      a {
+        font-weight: normal;
+      }
+
+      &:last-child {
+        border-left-color: white;
+        padding-bottom: 0;
+      }
+
+      &:first-child {
+        // if only child, reset `:last-child`
+        border-color: $brand-primary;
+        padding-top: $line-height-computed;
+      }
+    }
+
+    span.m {
+      border-width: 1px;
+      font-weight: normal;
+      margin-left: -($marker-ball-size / 2);
+    }
+  }
+}
+
+/*
+ * Marker Ball
+ *
+ * Used for displaying step markers (e.g. "1" and "1.1") in a ball in primarily
+ * an `ol.steps`
+ */
+span.m {
+  background: #fff;
+  border: 2px solid $brand-primary;
+  border-radius: $marker-ball-size / 2;
+
+  display: block;
+  float: left;
+  color: $brand-primary;
+  font-weight: bold;
+  width: $marker-ball-size;
+  height: $marker-ball-size;
+  padding: 9px 5px;
+  margin-right: 10px;
+  text-align: center;
+  -webkit-transition: all linear 0.1s;
+}
+
+/*
+ * Box article
+ *
+ * Any content can be in a box
+ */
+.box {
+  border: 1px solid white;
+  margin-bottom: $line-height-computed;
+  padding: $padding-base-horizontal;
+
+  h1 {
+    border-bottom: 1px solid white;
+    font-size: $font-size-large;
+    padding: 0 0 $line-height-computed;
+    margin: 0;
+  }
+
+  .read-more {
+    margin-bottom: 0;
+
+    a {
+      border-top: 1px solid $body-bg-desktop;
+      display: block;
+      margin: 0 (-$padding-base-horizontal) (-$padding-base-horizontal);
+      padding: ($line-height-computed / 2) 0;
+      text-align: center;
+
+      &:hover {
+        color: white;
+        background: $brand-primary;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/*
+ * Text page
+ */
+.page-text {
+  h2 {
+    font-size: $font-size-base;
+    margin: (1.5 * $line-height-computed) 0 0.5 * $line-height-computed;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: $font-size-h2;
+    margin: (2 * $line-height-computed) 0 (0 * $line-height-computed);
+    padding: 0;
+  }
+
+  .divvy {
+    display: table;
+    padding-top: $line-height-computed;
+
+    .col-sm-6 {
+      display: table-cell;
+      vertical-align: middle;
+      float: none;
+      padding: ($line-height-computed) (3 * $padding-base-horizontal);
+      // min-height: 20 * $line-height-computed;
+    }
+
+    .first {
+      border-right: 2px solid #eee;
+    }
+  }
+
+  dl {
+    dd { margin-bottom: $line-height-computed; }
+  }
+}
+/*
+ * Video Article
+ */
+article.video {
+  h1 {
+    font-weight: normal;
+  }
+}

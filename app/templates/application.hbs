@@ -3,20 +3,20 @@
     <div class="row">
       <div class="col-md-3">
         <ul>
-          <li><a href="#">Om Onlineakademin</a></li>
-          <li><a href="#">Videor</a></li>
+          <li>{{#link-to 'about'}}Om Onlineakademin{{/link-to}}</li>
+          <li>{{#link-to 'nodes'}}Videor{{/link-to}}</li>
         </ul>
       </div>
       <div class="col-md-3">
         <ul>
-          <li><a href="#">Bidra</a></li>
-          <li><a href="#">Våra sponsorer</a></li>
+          <li>{{#link-to 'about.contribute'}}Bidra{{/link-to}}</li>
+          <li>{{#link-to 'about.partners'}}Våra sponsorer{{/link-to}}</li>
         </ul>
       </div>
       <div class="col-md-3 last-ul">
         <ul>
-          <li><a href="#">Kontakt</a></li>
-          <li><a href="#">Om grundarna</a></li>
+          <li>{{#link-to 'about.contact'}}Kontakt{{/link-to}}</li>
+          <li>{{#link-to 'about.founders'}}Om grundarna{{/link-to}}</li>
         </ul>
       </div>
       <div class="col-md-3 col-social">
@@ -30,19 +30,26 @@
   </div>
 </div>
 
-<nav class="navbar">
+<nav class="site-header navbar navbar-fixed-top">
   <div class="container">
     <div class="row">
-      <div class="col-xs-4 col-sm-3 col-md-4">
-        {{#link-to 'index'}}<img src="/images/menu-home.svg"> <span>Onlineakademin</span>{{/link-to}}
+      <div class="col-xs-4 header-brand">
+        {{#link-to 'index' class="menu-link menu-home"}}
+          <img src="/images/menu-home.svg" alt="OA" class="menu-icon">
+          <span class="menu-text">Onlineakademin</span>
+        {{/link-to}}
       </div>
 
-      <div class="col-xs-4 col-sm-3 col-md-4 text-center" style="text-align: center">
-        {{#link-to 'nodes'}}<img src="/images/menu-videos.svg"> <span>Videor</span>{{/link-to}}
-      </div>
+      <div class="col-xs-8 header-nav">
+        {{#link-to 'nodes' class="menu-link menu-videos"}}
+          <img src="/images/menu-videos.svg" alt="Videos" class="menu-icon">
+          <span class="menu-text">Videor</span>
+        {{/link-to}}
 
-      <div class="col-xs-4 col-sm-6 col-md-4">
-        <a {{action 'toggleMenu' target=view}} href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+        <a {{action 'toggleMenu' target=view}} class="menu-link menu-hamburger">
+          <span class="glyphicon glyphicon-menu-hamburger menu-icon"></span>
+          <span class="menu-text">Meny</span>
+        </a>
       </div>
     </div>
   </div>
@@ -50,29 +57,18 @@
 
 <div class="overlay" {{action 'closeMenu' target=view}}></div>
 
-<div class="container wrapper-content">
-  {{outlet}}
-</div>
+{{outlet}}
 
 <footer class="container wrapper-footer">
   <div class="row">
-    <div class="col col-sm-4">
-      <ul>
-        <li><a href="#">Om Onlineakademin</a></li>
-        <li><a href="#">Videor</a></li>
-      </ul>
+    <div class="col col-sm-2 col-sm-offset-3">
+      <img src="images/social-youtube.svg" alt="YouTube">
     </div>
-    <div class="col col-sm-4">
-      <ul>
-        <li><a href="#">Bidra</a></li>
-        <li><a href="#">Våra sponsorer</a></li>
-      </ul>
+    <div class="col col-sm-2">
+      <img src="images/social-facebook.svg" alt="Facebook">
     </div>
-    <div class="col col-sm-4">
-      <ul>
-        <li><a href="#">Kontakta oss</a></li>
-        <li><a href="#">Om grundarna</a></li>
-      </ul>
+    <div class="col col-sm-2">
+      <img src="images/social-twitter.svg" alt="Twitter">
     </div>
   </div>
 </footer>

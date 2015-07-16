@@ -13,6 +13,10 @@ export default Router.map(function() {
     });
   });
 
-  this.route('about');
-  this.route('test-video');
+  this.route('about', function() {
+    this.route('founders');
+    this.route('contribute');
+    this.route('contact');
+    this.route('partners');
+  });
 });

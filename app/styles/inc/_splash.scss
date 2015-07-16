@@ -1,0 +1,120 @@
+.splash-page {
+  height: 100%;
+}
+
+// a full-width/full-heigh splash panel used for immersive content
+// will fill entire browser view
+.splash-panel {
+  height: 100%;
+  padding: $padding-large-vertical $padding-large-horizontal;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+
+  // vertical alignment
+  &:before, .splash-panel-content {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  // together with the previous declaration, ghosts .splash-panel-content
+  // into vertical alignment of this splash panel
+  &:before {
+    content: '';
+    height: 100%;
+  }
+}
+
+body.page-index .site-header { box-shadow: none; }
+body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); }
+
+.splash-panel-content {
+  text-align: left;
+  max-width: $container-sm;
+  width: 100%;
+  white-space: normal;
+}
+
+#intro.splash-panel {
+  background: $brand-primary;
+  color: $brand-secondary;
+
+  h1, h2 {
+    font-size: 1.5 * $font-size-h1;
+    font-weight: bold;
+  }
+
+  h1 {
+    color: white;
+    margin-bottom: $line-height-computed;
+  }
+}
+
+#splash-video {
+  background: linear-gradient(180deg, $brand-primary 50%, white 50%);
+  padding: $line-height-computed 0;
+
+  .video-wrapper {
+    background: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.50);
+    margin: 0 auto;
+    padding: $line-height-computed;
+    max-width: $container-sm;
+  }
+}
+
+#splash-text {
+  margin: 0 auto 2 * $line-height-computed;
+  max-width: $container-sm;
+
+  h1 {
+    font-weight: bold;
+    margin-bottom: 1.5 * $line-height-computed;
+    text-align: center;
+  }
+
+  p {
+    font-size: $font-size-h3;
+    font-weight: 200;
+  }
+
+  .get-started {
+    a {
+      background: $brand-primary;
+      color: white;
+      display: block;
+      font-size: $font-size-h1;
+      font-weight: bold;
+      padding: 2 * $line-height-computed;
+      margin: (2 * $line-height-computed) 0;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+
+  .buttons {
+    a {
+      border: 1px solid #ccc;
+      color: black;
+      display: inline-block;
+      font-size: $font-size-h3;
+      padding: 1.5 * $line-height-computed;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+}
+
+// not mobile first
+@media (max-width: $screen-sm-max) {
+  #intro.splash-panel {
+    h1, h2 {
+      font-size: 1 * $font-size-h1;
+    }
+  }
+
+  #splash-video {
+    .video-wrapper { box-shadow: none; }
+  }
+}
