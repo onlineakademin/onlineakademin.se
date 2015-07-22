@@ -58,10 +58,9 @@ body, body > div.ember-view {
     padding-bottom: 2 * $line-height-computed;
 
     h2 {
-      border: 1px solid #ccc;
-      border-width: 1px 0;
-      margin: $line-height-computed (-$grid-gutter-width / 2);
-      padding: $line-height-computed 0 ($line-height-computed - 1px);
+      font-size: $font-size-h4;
+      margin: $line-height-computed 0;
+      padding: 0;
       text-align: center;
 
       &:first-child {
@@ -209,6 +208,7 @@ header.page {
  * Hide sub-steps by setting `.not-expanded` on the step `li` element.
  */
 ol.steps {
+  background: white;
   list-style-type: none;
   margin: 0;
   padding: 0;
