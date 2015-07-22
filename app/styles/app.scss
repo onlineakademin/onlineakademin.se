@@ -44,6 +44,12 @@ body, body > div.ember-view {
 
   .wrapper-sidebar {
     @include make-sm-column(4);
+
+    .affix {
+      top: 80px;
+      height: 80%;
+      overflow-y: scroll;
+    }
   }
   
   .wrapper-main {
@@ -85,6 +91,12 @@ body, body > div.ember-view {
       border-right: 1px solid #ccc;
     }
   }
+}
+
+.wrapper-sidebar .affix {
+  @media (min-width: $screen-sm-min) { width: 217px; }
+  @media (min-width: $screen-md-min) { width: 291px; }
+  @media (min-width: $screen-lg-min) { width: 357px; }
 }
 
 /*

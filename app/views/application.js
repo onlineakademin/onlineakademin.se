@@ -27,9 +27,11 @@ export default Ember.View.extend({
   didInsertElement: function() {
     var onScroll = function() {
       var $intro = Ember.$("#intro .splash-panel-content");
-      var state = Ember.$(this).scrollTop() > $intro.position().top - 20;
-
-      Ember.$('.site-header').toggleClass('unmelt', state);
+      
+      if ($intro.position()) {
+        var state = Ember.$(this).scrollTop() > $intro.position().top - 20;
+        Ember.$('.site-header').toggleClass('unmelt', state);
+      }
     };
 
     Ember.$(document).bind('touchmove', onScroll);

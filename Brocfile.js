@@ -14,6 +14,7 @@ app.import('bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-ha
 app.import('bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff', fonts);
 app.import('bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2', fonts);
 
+app.import(app.bowerDirectory + '/bootstrap-sass/assets/javascripts/bootstrap/affix.js');
 // Use `app.import` to add additional libraries to the generated
 // output files.
 //
