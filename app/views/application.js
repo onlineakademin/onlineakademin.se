@@ -14,23 +14,30 @@ export default Ember.View.extend({
   },
 
   menuVisibleChanged: function() {
-    $('body').toggleClass('with-menu', this.get('menuVisible'));
+    Ember.$('body').toggleClass('with-menu', this.get('menuVisible'));
   }.observes('menuVisible'),
+
+  pathChanged: function() {
+    // hide menu and scroll to top whenever the application
+    // path has changed.
+    this.set('menuVisible', false);
+    window.scrollTo(0, 0);
+  }.observes('controller.currentPath'),
 
   didInsertElement: function() {
     var onScroll = function() {
-      var $intro = $("#intro .splash-panel-content");
-      var state = $(this).scrollTop() > $intro.position().top - 20;
+      var $intro = Ember.$("#intro .splash-panel-content");
+      var state = Ember.$(this).scrollTop() > $intro.position().top - 20;
 
-      $('.site-header').toggleClass('unmelt', state);
-    }
+      Ember.$('.site-header').toggleClass('unmelt', state);
+    };
 
-    $(document).bind('touchmove', onScroll);
-    $(window).bind('scroll', onScroll);
+    Ember.$(document).bind('touchmove', onScroll);
+    Ember.$(window).bind('scroll', onScroll);
   },
 
   willRemoveElement: function() {
-    $(window).unbind('scroll');
-    $(document).unbind('touchmove');
+    Ember.$(window).unbind('scroll');
+    Ember.$(document).unbind('touchmove');
   }
 });
