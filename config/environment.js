@@ -6,7 +6,6 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
-    lessOptions: { paths: [ 'bower_components/bootstrap/less' ] },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -23,10 +22,9 @@ module.exports = function(environment) {
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    ENV.APP.LOG_TRANSITIONS = true;
-    ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    // ENV.APP.LOG_TRANSITIONS = true;
+    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    //ENV.lessOptions = { paths: [ 'bower_components/bootstrap/less' ] };
     ENV.apiServer = 'http://localhost:3000';
   }
 
@@ -43,7 +41,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
     ENV.apiServer = 'http://api.onlineakademin.se';
   }
 
