@@ -231,7 +231,17 @@ ol.steps {
     margin-bottom: $line-height-computed;
     padding: $line-height-computed $padding-base-horizontal;
 
-    &.not-expanded ol { display: none; }
+    > span {
+      border-left: 1px solid $brand-primary;
+      margin-left: $marker-ball-size / 2;
+
+      span.m { margin-left: -$marker-ball-size / 2; }
+    }
+
+    &.not-expanded {
+      > span { border-left-color: white; }
+      ol { display: none; }
+    }
   }
 
   // sub-steps
@@ -264,7 +274,7 @@ ol.steps {
 
     span.m {
       border-width: 1px;
-      border-color: white;
+      border-color: $brand-primary;
       font-weight: normal;
       margin-left: -($marker-ball-size / 2);
     }
