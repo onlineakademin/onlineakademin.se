@@ -3,10 +3,16 @@
     <div class="splash-panel-content">
       <h1 class="splash-panel-title">Hej, vi är Onlineakademin.</h1>
       <h2>
-        En ideell organisation som
-        hjälper gymnasieelever att lära sig
-        matematik.
+        En ideell förening som<br>
+        hjälper gymnasieelever att<br>
+        lära sig matematik.
       </h2>
+    </div>
+    <div class="splash-panel-continue">
+      <a href="#splash-video">
+        Läs mer<br>
+        <span class="glyphicon glyphicon-menu-down"></span>
+      </a>
     </div>
   </article>
 </section>
@@ -20,25 +26,34 @@
 </article>
 
 <article id="splash-text">
-  <h1>Vår idé är enkel.</h1>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Vår idé är enkel.</h1>
 
-  <p>
-    Vi tillhandahåller pedagogiskt videomaterial som går igenom
-    matematisk teori och räkneexempel på en digital black board. 
-  </p>
+        <p>
+          Vi tillhandahåller pedagogiskt videomaterial som går igenom
+          matematisk teori och räkneexempel på en digital black board. 
+        </p>
 
-  <p>
-    Materialet täcker in alla mattekurser på gymnasiet och är
-    kostnadsfritt och tillgängligt för alla.
-  </p>
+        <p>
+          Materialet täcker in alla mattekurser på gymnasiet och är
+          kostnadsfritt och tillgängligt för alla.
+        </p>
+      </div>
+    </div>
 
-  <div class="get-started">
-    {{#link-to 'nodes'}}Kom igång nu{{/link-to}}
-  </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="get-started">
+          {{#link-to 'nodes'}}Kom igång nu{{/link-to}}
+        </div>
+      </div>
+    </div>
 
-  <div class="buttons row">
-    <div class="col-xs-5">{{#link-to 'about'}}Läs mer om oss{{/link-to}}</div>
-    <div class="col-xs-2"></div>
-    <div class="col-xs-5">{{#link-to 'about'}}Bidra{{/link-to}}</div>
+    <div class="buttons row">
+      <div class="col-sm-5">{{#link-to 'about'}}Läs mer om oss{{/link-to}}</div>
+      <div class="col-sm-5 col-sm-offset-2">{{#link-to 'about.contribute'}}Bidra{{/link-to}}</div>
+    </div>
   </div>
 </article>

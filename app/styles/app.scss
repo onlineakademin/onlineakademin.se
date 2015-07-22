@@ -52,7 +52,7 @@ body, body > div.ember-view {
     padding-bottom: 2 * $line-height-computed;
 
     h2 {
-      border: 1px solid $body-bg-desktop;
+      border: 1px solid #ccc;
       border-width: 1px 0;
       margin: $line-height-computed (-$grid-gutter-width / 2);
       padding: $line-height-computed 0 ($line-height-computed - 1px);
@@ -82,7 +82,7 @@ body, body > div.ember-view {
     }
 
     .wrapper-sidebar {
-      border-right: 2px solid $body-bg-desktop;
+      border-right: 1px solid #ccc;
     }
   }
 }
@@ -91,6 +91,7 @@ body, body > div.ember-view {
  * A page that only displays a list of steps as boxes (buttons)
  */
 .wrapper-steps {
+  @include make-row();
   $step-size: 120px;
 
   padding-top: $line-height-computed; 
@@ -127,7 +128,7 @@ body, body > div.ember-view {
 
 .wrapper-footer {
   background: white;
-  border-top: 1px solid $body-bg-desktop;
+  border-top: 1px solid #ccc;
   padding-top: 2 * $line-height-computed;
   padding-bottom: 2* $line-height-computed;
   margin-top: 3 * $line-height-computed;
@@ -174,7 +175,7 @@ header.page {
  * Sidebar social media
  */
 .social {
-  border: 1px solid $body-bg-desktop;
+  border: 1px solid #ccc;
   border-width: 1px 0 0;
 
   margin: 0 (-$grid-gutter-width / 2) 0;
@@ -210,13 +211,13 @@ ol.steps {
     -webkit-transition: color linear 0.1s;
     cursor: pointer;
 
-    &.active {
+    &.active, &:hover {
       color: $brand-primary;
       text-decoration: none;
 
       span.m {
-        background: $brand-primary;
-        color: #fff;
+        background: white;
+        color: $brand-primary;
       }
     }
 
@@ -263,6 +264,7 @@ ol.steps {
 
     span.m {
       border-width: 1px;
+      border-color: white;
       font-weight: normal;
       margin-left: -($marker-ball-size / 2);
     }
@@ -276,13 +278,13 @@ ol.steps {
  * an `ol.steps`
  */
 span.m {
-  background: #fff;
+  background: $brand-primary;
   border: 2px solid $brand-primary;
   border-radius: $marker-ball-size / 2;
 
   display: block;
   float: left;
-  color: $brand-primary;
+  color: white;
   font-weight: bold;
   width: $marker-ball-size;
   height: $marker-ball-size;
@@ -313,7 +315,7 @@ span.m {
     margin-bottom: 0;
 
     a {
-      border-top: 1px solid $body-bg-desktop;
+      border-top: 1px solid #ccc;
       display: block;
       margin: 0 (-$padding-base-horizontal) (-$padding-base-horizontal);
       padding: ($line-height-computed / 2) 0;
@@ -357,7 +359,7 @@ span.m {
     }
 
     .first {
-      border-right: 2px solid #eee;
+      border-right: 1px solid #ccc;
     }
   }
 
@@ -369,6 +371,8 @@ span.m {
  * Video Article
  */
 article.video {
+  margin-bottom: 2 * $line-height-computed; 
+
   h1 {
     font-weight: normal;
   }
