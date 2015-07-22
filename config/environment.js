@@ -13,6 +13,17 @@ module.exports = function(environment) {
       }
     },
 
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'connect-src': "'self' ws://localhost:35729 ws://0.0.0.0:35729 http://0.0.0.0:4200/csp-report http://localhost:3000",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'media-src': "'self'",
+      'frame-src': "'self' https://www.youtube.com http://www.youtube.com"
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
