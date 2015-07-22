@@ -31,7 +31,6 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 .splash-panel-content {
   text-align: left;
   max-width: 480px;
-  width: 100%;
   white-space: normal;
 }
 
@@ -63,7 +62,7 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
   color: $brand-secondary;
 
   h1, h2 {
-    font-size: $font-size-h1;
+    font-size: 1.5 * $font-size-h1;
     font-weight: bold;
   }
 
@@ -75,13 +74,16 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 
 #splash-video {
   background: linear-gradient(180deg, $brand-primary 50%, white 50%);
-  padding: (5 * $line-height-computed) 0 ($line-height-computed);
+  border-top: (4 * $line-height-computed) $brand-primary solid;
+  padding: ($line-height-computed) 0 ($line-height-computed);
 
   .video-wrapper {
     background: white;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.50);
     margin: 0 auto;
-    max-width: $container-sm;
+    max-width: 90%;
+    // padding: $line-height-computed;
+    
   }
 }
 
@@ -102,22 +104,30 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 
   .get-started {
     a {
-      background: $brand-primary;
-      color: white;
+      background: white;
+      border: 2px solid $brand-primary;
+      border-radius: 12px;
+      color: $brand-primary;
       display: block;
-      font-size: $font-size-h4;
+      font-size: 1.50 * $font-size-h4;
       font-weight: bold;
-      padding: $line-height-computed;
+      padding: $line-height-computed 0;
       margin: (2 * $line-height-computed) 0 $line-height-computed;
       text-align: center;
       text-decoration: none;
+
+      &:hover {
+        background: $brand-primary;
+        color: white;
+      }
     }
   }
 
   .buttons {
     a {
-      border: 1px solid #ccc;
-      color: black;
+      border: 2px solid $brand-primary;
+      border-radius: 12px;
+      color: $brand-primary;
       display: inline-block;
       font-size: $font-size-h4;
       padding: $line-height-computed;
@@ -125,13 +135,19 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
       width: 100%;
       text-align: center;
       text-decoration: none;
+
+      &:hover {
+        background: $brand-primary;
+        color: white;
+      }
     }
   }
 }
 
 @media (min-width: $screen-sm-min) {
   #splash-video .video-wrapper {
-    padding: $line-height-computed;
+    // padding: $line-height-computed;
+    max-width: $container-sm;
   }
 
   #splash-panel {
@@ -173,9 +189,5 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 @media (max-width: 480px) {
   #intro.splash-panel {
     h1, h2 { font-size: 0.60 * $font-size-h1; }
-  }
-
-  #splash-video {
-    .video-wrapper { box-shadow: none; }
   }
 }

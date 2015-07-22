@@ -8,13 +8,17 @@
   padding: (($navbar-height - $icon-height) / 2) 0;
   z-index: 500;
 
+  .container-fluid {
+    padding: 0 30px;
+  }
+
   &.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); }
   
   .header-nav {
     text-align: right;
 
     .menu-icon {
-      opacity: 0.5;
+      // opacity: 0.5;
       @include transition(all linear 0.1s);
     }
 
@@ -33,15 +37,18 @@
     }
 
     .glyphicon {
-      font-size: 26px;
-      padding: 2px 0;
+      font-size: 16px;
+      padding: 6px 0;
     }
   }
 
   .menu-text { display: none; }
 
   .menu-videos {
-    margin-right: 10px;
+    .menu-icon {
+      height: 20px;
+    }
+    margin-right: 20px;
   }
 }
 
@@ -105,8 +112,8 @@ body.with-menu {
 
 @media (min-width: $screen-md-min) {
   .site-header {
-    .menu-icon { margin-right: 5px; }
-    .menu-text { display: inline; }
+    .menu-icon { margin-right: 10px; }
+    .header-nav .menu-text { display: inline; }
     .menu-videos { margin-right: 20px; }
   }
 

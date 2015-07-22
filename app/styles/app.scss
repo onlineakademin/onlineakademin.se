@@ -54,6 +54,7 @@ body, body > div.ember-view {
   
   .wrapper-main {
     @include make-sm-column(8);
+    padding-left: 45px;
     padding-top: $line-height-computed;
     padding-bottom: 2 * $line-height-computed;
 
@@ -115,8 +116,8 @@ body, body > div.ember-view {
   .step-node {
     height: $step-size;
     width: $step-size;
-    background: $brand-primary;
-    color: white;
+    background: white;
+    color: $brand-primary;
 
     border: 2px solid $brand-primary;
     border-radius: $step-size / 2;
@@ -130,8 +131,8 @@ body, body > div.ember-view {
 
     &:hover {
       border-color: $brand-primary;
-      color: $brand-primary;
-      background: white;
+      color: white;
+      background: $brand-primary;
       text-decoration: none;
     }
   }
@@ -224,12 +225,12 @@ ol.steps {
     cursor: pointer;
 
     &.active, &:hover {
-      color: $brand-primary;
+      // color: $brand-primary;
       text-decoration: none;
 
       span.m {
-        background: white;
-        color: $brand-primary;
+        background: $brand-primary;
+        color: white;
       }
     }
 
@@ -270,6 +271,10 @@ ol.steps {
 
       a {
         font-weight: normal;
+        &.active {
+          font-weight: bold;
+          color: $brand-primary;
+        }
       }
 
       &:last-child {
@@ -300,13 +305,13 @@ ol.steps {
  * an `ol.steps`
  */
 span.m {
-  background: $brand-primary;
+  background: white;
   border: 2px solid $brand-primary;
   border-radius: $marker-ball-size / 2;
 
   display: block;
   float: left;
-  color: white;
+  color: $brand-primary;
   font-weight: bold;
   width: $marker-ball-size;
   height: $marker-ball-size;
