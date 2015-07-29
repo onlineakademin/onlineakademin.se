@@ -7,6 +7,10 @@ $navbar-height: 60px;
 // legacy
 $body-bg-desktop: #ededed;
 
+$btn-primary-color: $brand-primary;
+$btn-primary-bg: white;
+$btn-primary-border: $brand-primary;
+
 // bower:scss
 @import "_bootstrap.scss";
 @import "inc/_navbar.scss";
@@ -26,6 +30,20 @@ body, .application-view {
   background: white;
   // min-height: 100%;
   padding-top: $navbar-height;
+}
+
+.btn-primary {
+
+  &:hover {
+    background: $brand-primary;
+    border-color: $brand-primary;
+    color: white;
+  }
+
+  &:active, &:focus {
+    @include box-shadow(none);
+    background: white;
+  }
 }
 
 /*
