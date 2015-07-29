@@ -370,20 +370,26 @@ span.m {
     padding: 0;
   }
 
-  .divvy {
-    display: table;
-    padding-top: $line-height-computed;
-
+  .two-split {
     .col-sm-6 {
-      display: table-cell;
-      vertical-align: middle;
       float: none;
-      padding: ($line-height-computed) (3 * $padding-base-horizontal);
-      // min-height: 20 * $line-height-computed;
+      padding: $line-height-computed (2 * $padding-base-horizontal) 0;
     }
 
     .first {
       border-right: 1px solid #ccc;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      display: table;
+
+      .col-sm-6 {
+        display: table-cell;
+        vertical-align: middle;
+        padding-top: $line-height-computed (3 * $padding-base-horizontal);
+      }
+
+      .first { text-align: right; }
     }
   }
 
@@ -391,6 +397,8 @@ span.m {
     dd { margin-bottom: $line-height-computed; }
   }
 }
+
+
 /*
  * Video Article
  */
