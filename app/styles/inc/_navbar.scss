@@ -39,18 +39,16 @@
     }
 
     .glyphicon {
-      font-size: 16px;
-      padding: 6px 0;
+      font-size: 21px;
+      padding: 3px 0;
     }
   }
 
   .menu-text { display: none; }
 
   .menu-videos {
-    .menu-icon {
-      height: 20px;
-    }
     margin-right: 20px;
+    .menu-icon { height: 24px; }
   }
 }
 
