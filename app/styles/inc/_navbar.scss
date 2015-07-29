@@ -23,6 +23,8 @@
     }
 
     .menu-link {
+      cursor: pointer;
+
       &:hover .menu-icon { opacity: 1.0; }
     }
   }
