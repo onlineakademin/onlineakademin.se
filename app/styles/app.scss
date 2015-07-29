@@ -39,6 +39,13 @@ body, .application-view {
   @include make-row();
   padding-top: $line-height-computed;
 
+  h2 {
+    font-size: $font-size-h4;
+    line-height: $line-height-base;
+    margin: $line-height-computed 0;
+    padding: 0 $padding-base-horizontal;
+  }
+
   .wrapper-sidebar {
     @include make-sm-column(4);
 
@@ -51,31 +58,14 @@ body, .application-view {
   
   .wrapper-main {
     @include make-sm-column(8);
-    padding-left: 45px;
-    padding-top: $line-height-computed;
+
     padding-bottom: 2 * $line-height-computed;
-
-    h2 {
-      font-size: $font-size-h4;
-      margin: $line-height-computed 0;
-      padding: 0;
-      text-align: center;
-
-      &:first-child {
-        margin-top: 0;
-      }
-
-      @media (min-width: $screen-sm-min) {
-        &:first-child {
-          border-width: 0 0 1px;
-        }
-      }
-    }
   }
 
   @media (min-width: $screen-sm-min) {
     display: table;
     height: 100%;
+    padding-top: 2 * $line-height-computed;
 
     .wrapper-sidebar, .wrapper-main {
       height: 100%;
@@ -86,6 +76,11 @@ body, .application-view {
 
     .wrapper-sidebar {
       border-right: 1px solid #ccc;
+    }
+
+    .wrapper-main {
+      padding-left: 45px;
+      padding-top: 0.5 * $line-height-computed;
     }
   }
 }
@@ -103,7 +98,6 @@ body, .application-view {
   @include make-row();
   $step-size: 110px;
 
-  padding-top: $line-height-computed; 
   text-align: center;
   
   .step-wrapper {
@@ -175,14 +169,32 @@ body, .application-view {
  * row.
  */
 header.page {
-  margin: 0 (-$grid-gutter-width / 2);
-  padding: 2 * $line-height-computed 0 $line-height-computed;
+  // margin: 0 (-$grid-gutter-width / 2);
+  padding: $line-height-computed $padding-base-horizontal;
 
   h1 {
-    margin: 0;
+    font-size: $font-size-h4;
+    line-height: $line-height-base;
+    margin: $line-height-computed 0;
     padding: 0;
     text-align: center;
+
+    @media (min-width: $screen-sm-min) {
+      font-size: $font-size-h1;
+    }
   }
+}
+
+h2.pathfinder {
+  overflow: auto;
+
+  a.up, span.text {
+    display: block;
+    float: left;
+    width: 10%;
+  }
+
+  span.text { width: 90%; }
 }
 
 /*
@@ -365,20 +377,26 @@ span.m {
 .page-text {
   h2 {
     font-size: $font-size-base;
-    margin: (1.5 * $line-height-computed) 0 0.5 * $line-height-computed;
+    margin: 0 0 0.5 * $line-height-computed;
     padding: 0;
   }
 
   h1 {
-    font-size: $font-size-h2;
-    margin: (2 * $line-height-computed) 0 (0 * $line-height-computed);
+    font-size: $font-size-h4;
+    margin: (2 * $line-height-computed) 0 (0.5 * $line-height-computed);
     padding: 0;
   }
+
+  p {
+    margin-bottom: 1.5 * $line-height-computed;
+  }
+
+  img { max-width: 100%; }
 
   .two-split {
     .col-sm-6 {
       float: none;
-      padding: $line-height-computed (2 * $padding-base-horizontal) 0;
+      padding: 0 (2 * $padding-base-horizontal) $line-height-computed;
     }
 
     .first {
