@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.View.extend({
+  classNames: ['application-view'],
   menuVisible: false,
 
   actions: {
@@ -25,6 +26,8 @@ export default Ember.View.extend({
   }.observes('controller.currentPath'),
 
   didInsertElement: function() {
+    this._super();
+
     var onScroll = function() {
       var $intro = Ember.$("#intro .splash-panel-content");
       

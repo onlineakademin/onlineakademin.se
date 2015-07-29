@@ -18,10 +18,7 @@ html {
   overflow: auto;
 }
 
-body {
-}
-
-body, body > div.ember-view {
+body, .application-view {
   height: 100%;
 }
 
