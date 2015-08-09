@@ -470,3 +470,30 @@ article.video {
     font-weight: normal;
   }
 }
+
+.share-links {
+  margin-top: $line-height-computed; 
+
+  .text {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  a.share {
+    border-radius: $marker-ball-size / 2;
+    display: inline-block;
+    border: 2px solid $brand-primary;
+    margin-right: 10px; 
+    height: $marker-ball-size;
+    width: $marker-ball-size;
+    padding-top: 9px;
+    vertical-align: middle;
+    text-align: center;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }    
+}
