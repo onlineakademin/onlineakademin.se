@@ -1,6 +1,11 @@
 <h2 class="visible-xs pathfinder">
-  {{#link-to 'nodes.lvl0' model.parent.parent.id class="up"}}<span class="glyphicon glyphicon-chevron-left"></span>{{/link-to}}
-  <span class="text">{{model.marker}} {{model.name}}</span>
+  {{#link-to 'nodes.lvl0' model.parent.parent.id class="up"}}
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="text">{{model.parent.parent.name}}</span>
+  {{/link-to}}
+</h2>
+<h2 class="visible-xs">
+  {{model.marker}} {{model.name}}
 </h2>
 
 {{#each node in model.children}}

@@ -3,9 +3,15 @@
     <div class="wrapper-sidebar {{if sidebarHiddenXS 'hidden-xs'}}">
       <div class="inner-sidebar">
         <h2 class="pathfinder">
-          {{#link-to 'nodes' class="up"}}<span class="glyphicon glyphicon-chevron-left"></span>{{/link-to}}
-          <span class="text">{{model.name}}</span>
+          {{#link-to 'nodes' class="up"}}
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="text">Kurser</span>
+          {{/link-to}}
         </h2>
+        <h2>
+          {{model.name}}
+        </h2>
+
 
         {{component "node-menu" nodes=model.children}}
       </div>
