@@ -251,7 +251,7 @@ ol.steps {
   background: white;
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: ($line-height-computed / 2) 0 0 0;
 
   a, span.lvl0 {
     display: block;
@@ -280,7 +280,7 @@ ol.steps {
 
   // boxed steps
   > li {
-    margin-bottom: $line-height-computed;
+    margin-bottom: $line-height-computed / 2; 
     padding: $line-height-computed $padding-base-horizontal;
 
     > span {
@@ -491,7 +491,7 @@ article.video {
     border-radius: $marker-ball-size / 2;
     display: inline-block;
     border: 2px solid $brand-primary;
-    margin-right: 10px; 
+    margin-left: 10px; 
     height: $marker-ball-size;
     width: $marker-ball-size;
     padding-top: 9px;

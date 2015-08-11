@@ -131,6 +131,7 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
         vertical-align: middle;
       }
 
+      /*
       &:hover {
         background: $brand-primary;
         color: white;
@@ -139,6 +140,7 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
           background-image: url('/images/menu-videos.svg');
         }
       }
+      */
     }
   }
 
@@ -157,10 +159,12 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
       text-align: center;
       text-decoration: none;
 
+      /*
       &:hover {
         background: $brand-primary;
         color: white;
       }
+      */
     }
   }
 }
