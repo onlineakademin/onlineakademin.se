@@ -32,7 +32,8 @@ let Node =  DS.Model.extend({
     if (this.get('level') == 1) {
       return this.get('ord');
     }
-    return this.get('parent.ord') + '.' + this.get('ord');
+    
+    return this.get('parent.marker') + '.' + this.get('ord');
   }.property('ord', 'level', 'parent'),
 
   componentName: function() {
