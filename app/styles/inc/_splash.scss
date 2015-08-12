@@ -73,8 +73,8 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
 
 #splash-video {
-  background: linear-gradient(180deg, $brand-primary 50%, white 50%);
-  border-top: (4 * $line-height-computed) $brand-primary solid;
+  background: white;
+  border-top: (6 * $line-height-computed) white solid;
   padding: ($line-height-computed) 0 ($line-height-computed);
 
   .video-wrapper {
