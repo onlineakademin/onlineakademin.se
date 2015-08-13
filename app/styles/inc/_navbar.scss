@@ -78,14 +78,14 @@
       border-bottom: 1px solid #ccc;
       padding: $line-height-computed / 2 0;
     }
-  }
 
-  a {
-    display: block;
-    color: $text-color;
-    padding: 10px 15px;
+    a {
+      display: block;
+      color: $text-color;
+      padding: 10px 15px;
+    }
   }
-
+  
   .social {
     border-top: none;
   }

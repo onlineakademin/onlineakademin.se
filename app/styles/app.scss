@@ -33,7 +33,10 @@ body, .application-view {
 }
 
 .btn-primary {
-
+  @include transition(all linear 0.1s);
+  
+  border-width: 2px;
+  
   &:hover {
     background: $brand-primary;
     border-color: $brand-primary;
@@ -44,6 +47,13 @@ body, .application-view {
     @include box-shadow(none);
     background: white;
   }
+}
+
+.btn-large {
+  border-radius: 12px;
+  font-size: 18px;
+  padding: 20px;
+  width: 100%;
 }
 
 /*
