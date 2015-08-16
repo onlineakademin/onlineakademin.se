@@ -294,6 +294,16 @@ ol.steps {
     }
   }
 
+  span.text {
+    display: block;
+    float: left;
+    max-width: 300px;
+
+    @media (min-width: $screen-sm-min) { width: 172px - $marker-ball-size - 10px; }
+    @media (min-width: $screen-md-min) { width: 247px - $marker-ball-size - 10px; }
+    @media (min-width: $screen-lg-min) { width: 313px - $marker-ball-size - 10px; }
+  }
+
   // boxed steps
   > li {
     margin-bottom: $line-height-computed / 2; 
