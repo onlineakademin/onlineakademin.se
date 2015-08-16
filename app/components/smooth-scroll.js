@@ -2,12 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'a',
-  attributeBindings: ['href'],
+  attributeBindings: ['href', 'offset'],
 
   didInsertElement: function() {
+    var that = this;
+
     Ember.$(this.get('element')).click(function() {
+      var offset = parseInt(that.get('offset'));      
       var target = $(this.hash);
-      $("html, body").animate({ scrollTop: target.offset().top }, 1000);
+      
+      $("html, body").animate({ scrollTop: target.offset().top + offset }, 1000);
 
       return false;
     });

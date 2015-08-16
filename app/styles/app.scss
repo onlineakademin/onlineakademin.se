@@ -36,11 +36,17 @@ body, .application-view {
   @include transition(all linear 0.1s);
   
   border-width: 2px;
-  
+
   &:hover {
-    background: $brand-primary;
-    border-color: $brand-primary;
-    color: white;
+    background: white;
+  }
+  
+  @media (min-width: $screen-md-min) {
+    &:hover {
+      background: $brand-primary;
+      border-color: $brand-primary;
+      color: white;
+    }
   }
 
   &:active, &:focus {

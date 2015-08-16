@@ -74,7 +74,7 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 
 #splash-video {
   background: white;
-  border-top: (6 * $line-height-computed) white solid;
+  border-top: (1 * $line-height-computed) white solid;
   padding: ($line-height-computed) 0 ($line-height-computed);
 
   .video-wrapper {
@@ -84,6 +84,10 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
     max-width: 90%;
     // padding: $line-height-computed;
     
+  }
+
+  @media (min-width: $screen-md-min) {
+    border-top-height: 2 * $line-height-computed;
   }
 }
 
@@ -131,7 +135,7 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
         vertical-align: middle;
       }
 
-      @media (min-width: $screen-sm-min) {
+      @media (min-width: $screen-md-min) {
         &:hover {
           background: $brand-primary;
           color: white;
@@ -155,7 +159,7 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
       text-align: center;
       text-decoration: none;
 
-      @media (min-width: $screen-sm-min) {
+      @media (min-width: $screen-md-min) {
         &:hover {
           background: $brand-primary;
           color: white;
@@ -168,7 +172,7 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 @media (min-width: $screen-sm-min) {
   #splash-video .video-wrapper {
     // padding: $line-height-computed;
-    max-width: $container-sm;
+    max-width: 700px;
   }
 
   #splash-panel {
