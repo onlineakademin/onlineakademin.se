@@ -4,7 +4,7 @@ let OANode = DS.Model.extend({
   name: DS.attr('string'),
   ord: DS.attr('number'),
   type: DS.attr('string'),
-  content: DS.attr('string'),
+  attrs: DS.attr(),
 
   children: DS.hasMany('node', { inverse: 'parent', async: true }),
   parent: DS.belongsTo('node', { inverse: 'children', async: true }),
