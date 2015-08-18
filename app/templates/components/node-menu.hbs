@@ -1,17 +1,17 @@
 <ol class="steps">
   {{#each nodes as |node|}}
-  <li data-node-id={{node.id}} class="not-expanded">
-    <span class="lvl0" {{action 'toggleExpand' node}}>
-      <span class="m">{{node.marker}}</span>
-      <span class="text">{{node.name}}</span>
+  <li data-node-id={{node.id}}>
+    <span class="i" {{action 'toggleExpand' node}}>
+      <span class="mw"><span class="m">{{node.marker}}</span></span>
+      <span class="t">{{node.name}}</span>
     </span>
     
     <ol>
       {{#each node.children as |child|}}
         <li>
           {{#link-to 'nodes.lvl0.lvl2' node.parent.ord child.lvl2Id}}
-            <span class="m">{{child.marker}}</span>
-            <span class="text">{{child.name}}</span>
+            <span class="mw"><span class="m">{{child.marker}}</span></span>
+            <span class="t">{{child.name}}</span>
           {{/link-to}}
         </li>
       {{/each}}
