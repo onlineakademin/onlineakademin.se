@@ -1,7 +1,7 @@
 <li class="{{if view.isExpanded 'expanded' 'not-expanded'}}">
   <a href="#" {{action 'toggleExpand' target=view}} class="heading"><span class="marker">{{node.marker}}</span> {{node.name}}</a>
   <ol>
-    {{#each child in node.children}}
+    {{#each node.children as |child|}}
       <li>
         {{#link-to 'nodes.node' child.id}}<span class="marker">{{child.marker}}</span> {{child.name}}{{/link-to}}
       </li>

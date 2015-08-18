@@ -8,7 +8,7 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    willTransition: function(transition) {
+    willTransition: function() {
       this.controllerFor('nodes.lvl0').set('sidebarHiddenXS', false);
     },
   },

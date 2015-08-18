@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-let Node =  DS.Model.extend({
+let OANode = DS.Model.extend({
   name: DS.attr('string'),
   ord: DS.attr('number'),
   type: DS.attr('string'),
@@ -29,7 +29,7 @@ let Node =  DS.Model.extend({
   }.property('id', 'level'),
 
   marker: function() {
-    if (this.get('level') == 1) {
+    if (this.get('level') === 1) {
       return this.get('ord');
     }
     
@@ -45,4 +45,4 @@ let Node =  DS.Model.extend({
   }.property('type')
 });
 
-export default Node;
+export default OANode;

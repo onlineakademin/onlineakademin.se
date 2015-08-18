@@ -5,7 +5,7 @@ export default Ember.View.extend({
   templateName: 'nodes/box',
   tagName: 'li',
 
-  create: function(opts) {
+  create: function() {
     this.set('isExpanded', true);
   },
 
