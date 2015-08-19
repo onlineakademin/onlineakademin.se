@@ -14,7 +14,7 @@ module.exports = function(environment) {
     },
 
     contentSecurityPolicy: {
-      'default-src': "'none'",
+      'default-src': "'self'",
       'script-src': "'self'",
       'font-src': "'self'",
       'connect-src': "'self' ws://localhost:35729 ws://0.0.0.0:35729 http://0.0.0.0:4200/csp-report http://localhost:3000",
