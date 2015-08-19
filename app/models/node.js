@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import config from '../config/environment';
 
 let OANode = DS.Model.extend({
   name: DS.attr('string'),
@@ -42,7 +43,11 @@ let OANode = DS.Model.extend({
       return 'node-type/' + type;
     }
     return 'node-type/blank';
-  }.property('type')
+  }.property('type'),
+
+  pdfUrl: function() {
+    return config.APP.apiServer + '/pdfs/' + this.get('id');
+  }.property('id')
 });
 
 export default OANode;
