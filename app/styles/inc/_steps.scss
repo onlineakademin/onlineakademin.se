@@ -65,7 +65,7 @@ ol.steps {
   // tracer-lines along expanded items
   > li { padding-left: $marker-ball-size / 2 - 1; }
   span.mw { border-left: 1px solid white; }
-  span.m  { margin-left: -$marker-ball-size / 2; }
+  span.m  { margin-left: -$marker-ball-size / 2; position: relative; }
 
   // color border when it should show
   li.expanded span.mw { border-left-color: $brand-primary; }
