@@ -35,13 +35,13 @@ body, .application-view {
 
 .btn-primary {
   @include transition(all linear 0.1s);
-  
+
   border-width: 2px;
 
   &:hover {
     background: white;
   }
-  
+
   @media (min-width: $screen-md-min) {
     &:hover {
       background: $brand-primary;
@@ -90,7 +90,7 @@ body, .application-view {
       overflow-y: scroll;
     }
   }
-  
+
   .wrapper-main {
     @include make-sm-column(8);
 
@@ -134,7 +134,7 @@ body, .application-view {
   $step-size: 110px;
 
   text-align: center;
-  
+
   .step-wrapper {
     text-align: center;
   }
@@ -194,7 +194,7 @@ body, .application-view {
     color: #aaa;
   }
 
-  .col {    
+  .col {
     &:last-child { border-right: none; }
   }
 
@@ -204,7 +204,7 @@ body, .application-view {
 }
 
 /*
- * The header for an entire page, displayed above any content in its own 
+ * The header for an entire page, displayed above any content in its own
  * row.
  */
 header.page {
@@ -320,10 +320,6 @@ h2.pathfinder {
       padding: 0 (2 * $padding-base-horizontal) $line-height-computed;
     }
 
-    .first {
-      border-right: 1px solid #ccc;
-    }
-
     @media (min-width: $screen-sm-min) {
       display: table;
 
@@ -333,7 +329,10 @@ h2.pathfinder {
         padding-top: $line-height-computed (3 * $padding-base-horizontal);
       }
 
-      .first { text-align: right; }
+      .first {
+        border-right: 1px solid #ccc;
+        text-align: right;
+      }
     }
   }
 
@@ -352,7 +351,7 @@ h2.pathfinder {
  * Video Article
  */
 article.video {
-  margin-bottom: 2 * $line-height-computed; 
+  margin-bottom: 2 * $line-height-computed;
 
   h1 {
     font-weight: normal;
@@ -367,7 +366,7 @@ footer {
 }
 
 .share-links {
-  margin-top: $line-height-computed; 
+  margin-top: $line-height-computed;
 
   .text {
     display: inline-block;
@@ -379,7 +378,7 @@ footer {
     border-radius: $marker-ball-size / 2;
     display: inline-block;
     border: 2px solid $brand-primary;
-    margin-left: 10px; 
+    margin-left: 10px;
     height: $marker-ball-size;
     width: $marker-ball-size;
     padding-top: 9px;
@@ -390,5 +389,5 @@ footer {
       width: 20px;
       height: 20px;
     }
-  }    
+  }
 }
