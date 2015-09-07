@@ -51,3 +51,4 @@ let OANode = DS.Model.extend({
 });
 
 export default OANode;
+

@@ -5,3 +5,4 @@ export default Ember.Route.extend({
     return this.store.find('node', params.lvl0_ord, { reload: true });
   }
 });
+

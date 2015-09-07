@@ -10,3 +10,4 @@ export default Ember.Route.extend({
     Ember.$("body").removeClass('page-index');
   }
 });
+
