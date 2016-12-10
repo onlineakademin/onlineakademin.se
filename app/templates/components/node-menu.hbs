@@ -5,11 +5,11 @@
       <span class="mw"><span class="m">{{node.marker}}</span></span>
       <span class="t">{{node.name}}</span>
     </span>
-    
+
     <ol>
       {{#each node.children as |child|}}
         <li>
-          {{#link-to 'nodes.lvl0.lvl2' node.parent.ord child.lvl2Id}}
+          {{#link-to 'videor.lvl0.lvl2' node.parent.ord child.lvl2Id}}
             <span class="mw"><span class="m">{{child.marker}}</span></span>
             <span class="t">{{child.name}}</span>
           {{/link-to}}

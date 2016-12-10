@@ -6,16 +6,19 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-  this.route('nodes', function() {
+  this.route('videor', function() {
     this.route('lvl0', { path: ':lvl0_ord' }, function() {
       // lvl1 doesnt exist indepedently
       this.route('lvl2', { path: '*path' });
     });
   });
 
-  this.route('about', function() {
-    this.route('contribute');
+  this.route('om', function() {
     this.route('contact');
+    this.route('kontakt');
     this.route('partners');
+  });
+
+  this.route('bidra', function(){
   });
 });
