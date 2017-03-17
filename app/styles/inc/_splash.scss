@@ -108,7 +108,8 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
     font-weight: 200;
   }
 
-  .get-started {
+
+  .get-started{
     a {
       @include transition(all linear 0.1s);
 
@@ -118,7 +119,9 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
       color: $brand-primary;
       display: block;
       font-size: 1.50 * $font-size-h4;
+
       font-weight: bold;
+
       padding: $line-height-computed 0;
       margin: (2 * $line-height-computed) 0 $line-height-computed;
       text-align: center;
@@ -157,6 +160,30 @@ body.page-index .site-header.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
       font-size: $font-size-h4;
       padding: $line-height-computed;
       margin-bottom: $line-height-computed;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+
+      @media (min-width: $screen-md-min) {
+        &:hover {
+          background: $brand-primary;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .last-button{
+    a {
+      @include transition(all linear 0.1s);
+
+      border: 2px solid $brand-primary;
+      border-radius: 12px;
+      color: $brand-primary;
+      display: inline-block;
+      font-size: $font-size-h4;
+      padding: $line-height-computed;
+      margin-top: 2 * $line-height-computed;
       width: 100%;
       text-align: center;
       text-decoration: none;

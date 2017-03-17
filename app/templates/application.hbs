@@ -30,26 +30,29 @@
 </div>
 
 <nav class="site-header navbar navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-4 header-brand">
-        {{#link-to 'index' class="menu-link menu-home"}}
-          <img src="/images/menu-home.svg" alt="OA" class="menu-icon">
-          <span class="menu-text">Onlineakademin</span>
-        {{/link-to}}
-      </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-6 header-brand">
+            {{#link-to 'index' class="menu-link menu-home"}}
+              <img src="/images/menu-home.svg" alt="OA" class="menu-icon">
+              <span class="menu-text">Onlineakademin</span>
+            <span class="menu-icon-text">i samarbete med</span>{{/link-to}}
+            <a href="http://www.matteboken.se/" target="_blank" class="menu-link menu-home">
+              <img src="/images/Logga till startsida.svg" alt="Mattecentrum" class="menu-icon">
+              <span class="menu-text">Onlineakademin</span>
+            </a>
+          </div>
+          <div class="col-xs-6 header-nav">
+            {{#link-to 'videor' class="menu-link menu-videos"}}
+              <img src="/images/menu-videos.svg" alt="Videos" class="menu-icon">
+              <span class="menu-text">Videor</span>
+            {{/link-to}}
 
-      <div class="col-xs-8 header-nav">
-        {{#link-to 'videor' class="menu-link menu-videos"}}
-          <img src="/images/menu-videos.svg" alt="Videos" class="menu-icon">
-          <span class="menu-text">Videor</span>
-        {{/link-to}}
-
-        <a {{action 'toggleMenu' target=view}} class="menu-link menu-hamburger" href="#">
-          <span class="glyphicon glyphicon-menu-hamburger menu-icon"></span>
-          <span class="menu-text">Meny</span>
-        </a>
-      </div>
+            <a {{action 'toggleMenu' target=view}} class="menu-link menu-hamburger" href="#">
+              <span class="glyphicon glyphicon-menu-hamburger menu-icon"></span>
+              <span class="menu-text">Meny</span>
+            </a>
+        </div>
     </div>
   </div>
 </nav>

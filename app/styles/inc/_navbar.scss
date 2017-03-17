@@ -1,5 +1,8 @@
 .site-header {
   $icon-height: 1.5 * $line-height-computed;
+  //the two variables below are used for resizing purposes
+  $min-browser-window: 540px;
+  $resize-browser-window: 990px;
 
   background: $brand-primary;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
@@ -9,13 +12,16 @@
   z-index: 500;
 
   .container-fluid {
-    padding: 0 30px;
+    padding: 0 1.5 * $line-height-computed;
   }
 
   &.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); }
-  
+
   .header-nav {
     text-align: right;
+  .header-brand{
+    text-align: left;
+  }
 
     .menu-icon {
       // opacity: 0.5;
@@ -47,14 +53,38 @@
   .menu-text { display: none; }
 
   .menu-home {
+    margin-right: 15px;
     .menu-icon { height: 26px; }
   }
-  
+
+  .menu-icon-text{
+    //make sure text is enabled or not as well as getting the right margins
+    @media (min-width: $min-browser-window){
+      font-size: 100%;
+      margin-left: 10px;
+    };
+    @media (min-width: $resize-browser-window){
+      font-size: 100%;
+      margin-left: 0px;
+      margin-right: 5px;
+    };
+    @media (max-width: $min-browser-window){
+      display: none;
+      margin-right: 15px;
+    }
+  }
+
   .menu-videos {
     margin-right: 20px;
-
     .menu-icon { height: 24px; }
   }
+
+  .menu-padding{
+    margin-right: 20px;
+  }
+}
+
+.top-menu{
 }
 
 .menu-dropdown {
@@ -85,7 +115,7 @@
       padding: 10px 15px;
     }
   }
-  
+
   .social {
     border-top: none;
   }
@@ -117,7 +147,7 @@ body.with-menu {
 
 @media (min-width: $screen-md-min) {
   .site-header {
-    .menu-icon { margin-right: 10px; }
+    .menu-icon { margin-right: 20px; }
     .header-nav .menu-text { display: inline; }
     .menu-videos { margin-right: 20px; }
   }
@@ -125,7 +155,7 @@ body.with-menu {
   .menu-dropdown {
     padding: 48px 0;
 
-    ul { 
+    ul {
       list-style-type: none;
       padding: $line-height-computed 0;
       margin: 0;

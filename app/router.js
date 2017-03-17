@@ -13,8 +13,10 @@ export default Router.map(function() {
     });
   });
 
+  this.route('about', function() {
+  });
+
   this.route('om', function() {
-    this.route('contact');
     this.route('kontakt');
     this.route('partners');
   });
