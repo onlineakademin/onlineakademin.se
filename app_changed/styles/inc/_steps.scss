@@ -1,0 +1,88 @@
+/*
+"Steps" component
+
+An ordered 2-level list with marker balls and text. Second level can be
+expanded/collapsed.
+*/
+
+$marker-size: 40px;
+
+ol.steps,
+ol.steps ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ol.steps {
+  padding: 30px 0 10px;
+
+  span.i, a {
+    display: table;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  span.mw, span.t {
+    display: table-cell;
+    padding-bottom: 20px;
+  }
+
+  span.t {
+    padding-left: 10px;
+  }
+
+  // marker balls
+  span.m {
+    @include transition(all linear 0.1s);
+
+    background: white;
+    border: 2px solid $brand-primary;
+    border-radius: $marker-size / 2;
+    color: $brand-primary;
+    display: block;
+    font-weight: bold;
+    height: $marker-size;
+    padding: (($marker-size - $line-height-computed - 2 * 2px) / 2) 0;
+    text-align: center;
+    width: $marker-size;
+  }
+
+  // second level marker balls and links
+  ol span.m {
+    border-width: 1px;
+    font-weight: normal;
+    padding: (($marker-size - $line-height-computed - 2 * 1px) / 2) 0;
+  }
+  ol a { font-weight: normal }
+
+  // collapse/expand second level
+  li ol { display: none; }
+  li.expanded ol { display: block; }
+
+  // tracer-lines along expanded items
+  > li { padding-left: $marker-ball-size / 2 - 1; }
+  span.mw { border-left: 1px solid white; }
+  span.m  { margin-left: -$marker-ball-size / 2; position: relative; }
+
+  // color border when it should show
+  li.expanded span.mw { border-left-color: $brand-primary; }
+  ol li:last-child span.mw { border-left-color: white; }
+
+  // highlights
+  .active {
+    span.m { color: white; background: $brand-primary; }
+    span.t { color: $brand-primary; font-weight: bold; }
+  }
+
+  @media (min-width: $screen-md-min) {
+    span.i, a {
+      &:hover span.m {
+        background: $brand-primary;
+        color: white;
+      }
+    }
+  }
+}

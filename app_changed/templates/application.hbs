@@ -1,0 +1,73 @@
+<div class="menu-dropdown {{if view.menuVisible 'expanded' 'not-expanded'}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <ul>
+          <li>{{#link-to 'om'}}Om Onlineakademin{{/link-to}}</li>
+          <li>{{#link-to 'videor'}}Videor{{/link-to}}</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul>
+          <li>{{#link-to 'bidra'}}Bidra{{/link-to}}</li>
+          <li>{{#link-to 'om.partners'}}Samarbetspartners{{/link-to}}</li>
+        </ul>
+      </div>
+      <div class="col-md-3 last-ul">
+        <ul>
+          <li>{{#link-to 'om.kontakt'}}Kontakt{{/link-to}}</li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-social">
+        <div class="social">
+          <a href="https://www.youtube.com/channel/UCwuhbTu5ccTJCIXUuJyUOpQ" target="_blank"><img src="images/social-youtube.svg" alt="YouTube"></a>
+          <a href="https://www.facebook.com/onlineakademin" target="_blank"><img src="images/social-facebook.svg" alt="Facebook"></a>
+          <a href="https://twitter.com/onlineakademin" target="_blank"><img src="images/social-twitter.svg" alt="Twitter"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="site-header navbar navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-4 header-brand">
+        {{#link-to 'index' class="menu-link menu-home"}}
+          <img src="/images/menu-home.svg" alt="OA" class="menu-icon">
+          <span class="menu-text">Onlineakademin</span>
+        {{/link-to}}
+      </div>
+
+      <div class="col-xs-8 header-nav">
+        {{#link-to 'videor' class="menu-link menu-videos"}}
+          <img src="/images/menu-videos.svg" alt="Videos" class="menu-icon">
+          <span class="menu-text">Videor</span>
+        {{/link-to}}
+
+        <a {{action 'toggleMenu' target=view}} class="menu-link menu-hamburger" href="#">
+          <span class="glyphicon glyphicon-menu-hamburger menu-icon"></span>
+          <span class="menu-text">Meny</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="overlay" {{action 'closeMenu' target=view}}></div>
+
+{{outlet}}
+
+<footer class="container wrapper-footer">
+  <div class="row">
+    <div class="col col-sm-2 col-sm-offset-3">
+      <a href="https://www.youtube.com/channel/UCwuhbTu5ccTJCIXUuJyUOpQ" target="_blank"><img src="images/social-youtube.svg" alt="YouTube"></a>
+    </div>
+    <div class="col col-sm-2">
+      <a href="https://www.facebook.com/onlineakademin" target="_blank"><img src="images/social-facebook.svg" alt="Facebook"></a>
+    </div>
+    <div class="col col-sm-2">
+      <a href="https://twitter.com/onlineakademin" target="_blank"><img src="images/social-twitter.svg" alt="Twitter"></a>
+    </div>
+  </div>
+</footer>

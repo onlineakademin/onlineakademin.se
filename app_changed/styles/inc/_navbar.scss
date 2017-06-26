@@ -1,0 +1,151 @@
+.site-header {
+  $icon-height: 1.5 * $line-height-computed;
+
+  background: $brand-primary;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  height: $navbar-height;
+  margin: 0;
+  padding: (($navbar-height - $icon-height) / 2) 0;
+  z-index: 500;
+
+  .container-fluid {
+    padding: 0 30px;
+  }
+
+  &.unmelt { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); }
+  
+  .header-nav {
+    text-align: right;
+
+    .menu-icon {
+      // opacity: 0.5;
+      @include transition(all linear 0.1s);
+    }
+
+    .menu-link {
+      cursor: pointer;
+
+      &:hover .menu-icon { opacity: 1.0; }
+    }
+  }
+
+  .menu-link {
+    color: white;
+    text-decoration: none;
+
+    .menu-icon {
+      height: $icon-height;
+      vertical-align: middle;
+    }
+
+    .glyphicon {
+      font-size: 24px;
+      padding: 2px 0;
+    }
+  }
+
+  .menu-text { display: none; }
+
+  .menu-home {
+    .menu-icon { height: 26px; }
+  }
+  
+  .menu-videos {
+    margin-right: 20px;
+
+    .menu-icon { height: 24px; }
+  }
+}
+
+.menu-dropdown {
+  background: transparent;
+  color: $text-color;
+  padding: 0 0;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: -1000px;
+  z-index: 100;
+  @include transition(all 0.50s);
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+    li {
+      border-bottom: 1px solid #ccc;
+      padding: $line-height-computed / 2 0;
+    }
+
+    a {
+      display: block;
+      color: $text-color;
+      padding: 10px 15px;
+    }
+  }
+  
+  .social {
+    border-top: none;
+  }
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.0);
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  @include transition(background 0.10s);
+}
+
+body.with-menu {
+  .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    visibility: visible;
+  }
+
+  .menu-dropdown {
+    background: rgba(237, 237, 237, 1.00);
+    top: $navbar-height;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .site-header {
+    .menu-icon { margin-right: 10px; }
+    .header-nav .menu-text { display: inline; }
+    .menu-videos { margin-right: 20px; }
+  }
+
+  .menu-dropdown {
+    padding: 48px 0;
+
+    ul { 
+      list-style-type: none;
+      padding: $line-height-computed 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    ul li {
+      border-bottom: none;
+    }
+
+    .row > div {
+      border-right: 1px solid #ccc;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    .social {
+      padding-top: 60px;
+    }
+  }
+}

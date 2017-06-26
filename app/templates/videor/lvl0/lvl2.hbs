@@ -1,0 +1,14 @@
+<title>Onlineakademin - gratis läxhjälp i matematik</title>
+<h2>
+  {{model.marker}} {{model.name}} ({{model.parent.parent.name}})
+</h2>
+
+{{#each model.children as |node|}}
+  <div class="lvl2">
+    <h3>{{node.marker}} {{node.name}}</h3>
+
+    {{#each node.children as |child|}}
+      {{component child.componentName node=child}}
+    {{/each}}
+  </div>
+{{/each}}

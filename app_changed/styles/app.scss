@@ -207,7 +207,6 @@ body, .application-view {
  * The header for an entire page, displayed above any content in its own
  * row.
  */
-
 header.page {
   // margin: 0 (-$grid-gutter-width / 2);
   padding: $line-height-computed $padding-base-horizontal;
@@ -297,19 +296,6 @@ h2.pathfinder {
  * Text page
  */
 .page-text {
-
-  .top-offset{
-    margin-top: 2 * $line-height-computed
-  }
-
-  .top-offset-ekskaret{
-    margin-top: 2.5 * $line-height-computed
-  }
-
-  .smallertop-offset{
-    margin-top: $line-height-computed
-  }
-
   h2 {
     font-size: $font-size-base;
     margin: 0 0 0.5 * $line-height-computed;
