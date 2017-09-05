@@ -299,11 +299,15 @@ h2.pathfinder {
 .page-text {
 
   .top-offset{
-    margin-top: 2 * $line-height-computed
+    margin-top: $line-height-computed
+  }
+
+  .top-offset-rite{
+    margin-top: 1.1 * $line-height-computed
   }
 
   .top-offset-ekskaret{
-    margin-top: 2.5 * $line-height-computed
+    margin-top: 2.2 * $line-height-computed
   }
 
   .smallertop-offset{
